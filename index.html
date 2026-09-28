@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kJ to Calories</title>
+  <style>
+    body { font-family: sans-serif; max-width: 400px; margin: 40px auto; padding: 0 20px; }
+    input { font-size: 1.2em; width: 100%; padding: 10px; box-sizing: border-box; }
+    #result { font-size: 1.5em; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>kJ to Calories</h1>
+  <input id="kj" type="number" inputmode="decimal" placeholder="Enter kilojoules (kJ)">
+  <div id="result"></div>
+  <script>
+    const input = document.getElementById("kj");
+    const result = document.getElementById("result");
+    input.addEventListener("input", () => {
+      const kj = parseFloat(input.value);
+      result.textContent = isNaN(kj) ? "" : (kj / 4.184).toFixed(1) + " Calories (kcal)";
+    });
+  </script>
+</body>
+</html>
